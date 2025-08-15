@@ -28,6 +28,6 @@ public class Producto {
     private int cantidad;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "estado", nullable = false)
+    @Column(name = "estado_producto", nullable = false)
     private EstadoProducto estadoProducto;
 }
