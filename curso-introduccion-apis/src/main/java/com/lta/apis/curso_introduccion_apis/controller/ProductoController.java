@@ -1,5 +1,6 @@
 package com.lta.apis.curso_introduccion_apis.controller;
 
+import com.lta.apis.curso_introduccion_apis.entity.EstadoProducto;
 import com.lta.apis.curso_introduccion_apis.entity.Producto;
 import com.lta.apis.curso_introduccion_apis.service.ProductoService;
 import org.aspectj.apache.bcel.classfile.Module;
@@ -42,6 +43,52 @@ public class ProductoController {
         Optional<Producto> producto = productoService.buscarPorId(idProducto);
         return producto.isPresent() ? ResponseEntity.ok(producto.get())
                 : ResponseEntity.status(HttpStatus.NOT_FOUND).body("Producto no encontrado");
+    }
+
+    @PutMapping("/actualizar/{idProducto}")
+    public ResponseEntity<?> actualizarProducto(@PathVariable Long idProducto, @RequestBody Producto producto){
+        try {
+            Producto productoActualizado = new Producto();
+            productoActualizado.setIdProducto(idProducto);
+            productoActualizado.setNombreProducto(producto.getNombreProducto());
+            productoActualizado.setDescripcion(producto.getDescripcion());
+            productoActualizado.setPrecio(producto.getPrecio());
+            productoActualizado.setCantidad(producto.getCantidad());
+            productoActualizado.setEstadoProducto(producto.getEstadoProducto());
+
+            Producto productoBBDD = productoService.actualizarProducto(idProducto, productoActualizado);
+            return ResponseEntity.ok(productoActualizado);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
+    }
+
+    @DeleteMapping("/{idProducto}")
+    public ResponseEntity<?> eliminarProducto(@PathVariable Long idProducto){
+        try {
+        productoService.eliminarProducto(idProducto);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
+    }
+
+    @PutMapping("/estado/{idProducto}")
+    public ResponseEntity<?> cambiarEstadoProducto(@PathVariable Long idProducto, @RequestBody EstadoProducto estadoProducto){
+
+        try{
+
+            Producto productoActualizado = productoService.cambiarEstadoProducto(idProducto, estadoProducto);
+            return ResponseEntity.ok(productoActualizado);
+        }catch (Exception exception){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
+        }
+    }
+
+    @GetMapping("/estado/{estado}")
+    public ResponseEntity<List<Producto>> listarProductosPorEstado(@PathVariable EstadoProducto estado){
+       List<Producto> productos = productoService.obtenerProductoPorEstado(estado);
+       return ResponseEntity.ok(productos);
     }
 
 }
