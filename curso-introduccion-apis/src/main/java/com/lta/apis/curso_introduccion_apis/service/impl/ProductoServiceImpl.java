@@ -4,13 +4,16 @@ import com.lta.apis.curso_introduccion_apis.entity.EstadoProducto;
 import com.lta.apis.curso_introduccion_apis.entity.Producto;
 import com.lta.apis.curso_introduccion_apis.repository.ProductoRepasitory;
 import com.lta.apis.curso_introduccion_apis.service.ProductoService;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ProductoServiceImpl implements ProductoService {
 
     @Autowired
@@ -70,6 +73,6 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     public List<Producto> obtenerProductoPorEstado(EstadoProducto estadoProducto) {
-        return productoRepasitory.findByEstado(estadoProducto);
+        return productoRepasitory.findByEstadoProducto(estadoProducto);
     }
 }

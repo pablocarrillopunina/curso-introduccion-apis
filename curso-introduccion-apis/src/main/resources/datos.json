@@ -1,0 +1,65 @@
+[
+  {
+    "nombreProducto": "Teclado Mecánico HyperX",
+    "descripcion": "Switches rojos, retroiluminado",
+    "precio": 120,
+    "cantidad": 50,
+    "estadoProducto": "DISPONIBLE"
+  },
+  {
+    "nombreProducto": "Monitor LG UltraWide",
+    "descripcion": "34 pulgadas, resolución 3440x1440",
+    "precio": 450,
+    "cantidad": 20,
+    "estadoProducto": "DISPONIBLE"
+  },
+  {
+    "nombreProducto": "Silla Gamer Razer",
+    "descripcion": "Ergonómica, color negro y verde",
+    "precio": 300,
+    "cantidad": 15,
+    "estadoProducto": "DISPONIBLE"
+  },
+  {
+    "nombreProducto": "Auriculares Logitech G Pro X",
+    "descripcion": "Sonido envolvente, micrófono desmontable",
+    "precio": 150,
+    "cantidad": 70,
+    "estadoProducto": "DISPONIBLE"
+  },
+  {
+    "nombreProducto": "Disco SSD Samsung 1TB",
+    "descripcion": "Velocidad lectura 3500 MB/s",
+    "precio": 110,
+    "cantidad": 200,
+    "estadoProducto": "DISPONIBLE"
+  },
+  {
+    "nombreProducto": "Cámara Web Logitech C920",
+    "descripcion": "Full HD 1080p, micrófono integrado",
+    "precio": 90,
+    "cantidad": 80,
+    "estadoProducto": "DISPONIBLE"
+  },
+  {
+    "nombreProducto": "Mouse Gamer Corsair",
+    "descripcion": "Sensor óptico, 16000 DPI",
+    "precio": 60,
+    "cantidad": 150,
+    "estadoProducto": "DISPONIBLE"
+  },
+  {
+    "nombreProducto": "Laptop Dell XPS 15",
+    "descripcion": "Intel i7, 16GB RAM, 512GB SSD",
+    "precio": 1500,
+    "cantidad": 10,
+    "estadoProducto": "DISPONIBLE"
+  },
+  {
+    "nombreProducto": "Tablet Samsung Galaxy Tab S7",
+    "descripcion": "Pantalla 11 pulgadas, S-Pen incluido",
+    "precio": 650,
+    "cantidad": 25,
+    "estadoProducto": "DISPONIBLE"
+  }
+]

@@ -15,5 +15,5 @@ public interface ProductoRepasitory extends JpaRepository<Producto, Long> {
 
     Optional<Producto> findByIdProducto(Long idProducto);
 
-    List<Producto> findByEstado(EstadoProducto estadoProducto);
+    List<Producto> findByEstadoProducto(EstadoProducto estadoProducto);
 }
